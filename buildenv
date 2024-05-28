@@ -19,10 +19,9 @@ export ZOPEN_COMP="GO"
 
 zopen_init()
 {
-  export CGO_ENABLED=0
+  export CGO_ENABLED=1
   # Go installs binaries, so create the bin dir as well
   export GOBIN=$ZOPEN_INSTALL_DIR/bin
-  mkdir -p $ZOPEN_INSTALL_DIR/bin
   unset CC CXX
   export PATH=$PATH:$GOROOT/go-build-zos/bin
 }
@@ -31,12 +30,15 @@ zopen_wharf()
 {
   cd ..
   go work init ./s5cmd
+
   wharf ./s5cmd/...
   cd ./s5cmd
+  go work vendor
 }
 
 zopen_install()
 {
+  mkdir -p $ZOPEN_INSTALL_DIR/bin
   make build
 }
 
