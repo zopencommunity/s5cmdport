@@ -3,7 +3,7 @@
 S5CMD_VERSION="2.2.2" # Specify a stable release
 export ZOPEN_STABLE_TAG="v${S5CMD_VERSION}"
 export ZOPEN_STABLE_URL="https://github.com/peak/s5cmd.git"
-export ZOPEN_STABLE_DEPS="comp_go wharf make"
+export ZOPEN_STABLE_DEPS="check_go wharf make"
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_CATEGORIES="database"
 
