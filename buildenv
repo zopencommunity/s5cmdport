@@ -39,7 +39,7 @@ zopen_wharf()
 zopen_install()
 {
   mkdir -p $ZOPEN_INSTALL_DIR/bin
-  make build
+  cp s5cmd $ZOPEN_INSTALL_DIR/bin/ 
 }
 
 zopen_check_results()
